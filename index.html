@@ -1,0 +1,1375 @@
+<html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Haleema Saadia - Cybersecurity Professional</title>
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="https://img.icons8.com/color/48/000000/cyber-security.png">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+  <style>
+    :root {
+      /* Light theme colors */
+      --blue: #41436A;  /* Dark Blue */
+      --burgundy: #985063; /* Burgundy */
+      --coral: #F64668;    /* Coral */
+      --orange: #FE9677;   /* Light Orange */
+      
+      /* Theme colors */
+      --primary: var(--burgundy);
+      --primary-dark: #00ff41;  /* Green - for dark theme */
+      --terminal-bg: #1a1a1a;
+      --terminal-border: rgba(0, 255, 65, 0.3);
+      --terminal-shadow: rgba(0, 255, 65, 0.2);
+      --bg-light: #ffffff;
+      --text-light: var(--blue);
+      --muted-light: var(--burgundy);
+      --bg-dark: #121212;
+      --text-dark: #f8f9fa;
+      --muted-dark: #adb5bd;
+      --border-light: var(--orange);
+      --card-bg-light: #ffffff;
+      --card-bg-dark: #212121;
+      --section-bg-light: #f7f7f9;
+      --section-bg-dark: #1a1a1a;
+      --transition: 0.3s ease-in-out;
+      --accent-light: var(--coral);
+    }
+
+    /* Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      transition: background-color var(--transition), color var(--transition);
+      background-color: var(--bg-light);
+      color: var(--text-light);
+      padding-top: 60px;
+    }
+
+    body.dark {
+      background-color: var(--bg-dark);
+      color: var(--text-dark);
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+
+    a {
+      text-decoration: none;
+      color: var(--primary);
+      transition: color var(--transition);
+    }
+
+    body.dark a {
+      color: var(--primary-dark);
+    }
+
+    ul {
+      list-style-position: inside;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+
+    section {
+      padding: 4rem 0;
+    }
+
+    section:nth-child(even) {
+      background-color: var(--section-bg-light);
+    }
+
+    body.dark section:nth-child(even) {
+      background-color: var(--section-bg-dark);
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 3rem;
+      position: relative;
+    }
+
+    .section-title .title-text {
+      transition: opacity var(--transition);
+    }
+
+    body.dark .section-title .light-title {
+      display: none;
+    }
+
+    .section-title .dark-title {
+      display: none;
+      font-family: 'Fira Code', monospace;
+    }
+
+    body.dark .section-title .dark-title {
+      display: inline;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      border-radius: 4px;
+      background-color: var(--primary);
+      color: white;
+      font-weight: 500;
+      cursor: pointer;
+      border: none;
+      transition: background-color var(--transition), opacity var(--transition);
+    }
+
+    body.dark .btn {
+      background-color: transparent;
+      border: 1px solid var(--primary-dark);
+      color: var(--primary-dark);
+    }
+
+    .btn:hover {
+      opacity: 0.9;
+    }
+
+    /* Header/Navigation */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background-color: var(--bg-light);
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+      transition: background-color var(--transition);
+    }
+
+    body.dark header {
+      background-color: var(--bg-dark);
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 0;
+    }
+
+    .logo {
+      font-weight: 700;
+      font-size: 1.5rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      list-style-type: none; /* Removed dots/markers from navigation */
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: var(--text-light);
+    }
+
+    body.dark .mobile-menu-btn {
+      color: var(--text-dark);
+    }
+
+    /* Theme Toggle Switch */
+    .theme-switch-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 8px; /* Added gap for better spacing between icons and switch */
+    }
+    
+    /* Icon styling for security/hack icons */
+    .secure-icon {
+      color: var(--blue);
+      font-size: 18px;
+    }
+    
+    .hack-icon {
+      color: var(--primary-dark);
+      font-size: 18px;
+    }
+
+    .theme-slider {
+      display: inline-block;
+      height: 26px;
+      position: relative;
+      width: 60px;
+    }
+
+    .theme-slider input {
+      display: none;
+    }
+
+    .slider {
+      background-color: #ccc;
+      bottom: 0;
+      cursor: pointer;
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+      transition: .4s;
+      border-radius: 34px;
+    }
+
+    .slider:before {
+      background-color: #fff;
+      bottom: 4px;
+      content: "";
+      height: 18px;
+      left: 4px;
+      position: absolute;
+      transition: .4s;
+      width: 18px;
+      border-radius: 50%;
+    }
+
+    input:checked + .slider {
+      background-color: var(--primary-dark);
+    }
+
+    input:checked + .slider:before {
+      transform: translateX(34px);
+    }
+
+    /* Hero Section */
+    #hero {
+      padding: 5rem 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-height: calc(100vh - 60px);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    /* Increased profile picture size by 30% (15% + 15%) */
+    .profile-image {
+      margin: 0 auto 2rem;
+      width: 195px; /* 150px * 1.3 = 195px */
+      height: 234px; /* 180px * 1.3 = 234px */ 
+      overflow: hidden;
+      clip-path: polygon(50% 0%, 100% 20%, 100% 75%, 50% 100%, 0% 75%, 0% 20%); /* Shield shape */
+    }
+    
+    .rounded-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      /* Removed border-radius: 50% */
+      border: 3px solid var(--primary);
+    }
+    
+    body.dark .rounded-image {
+      border-color: var(--primary-dark);
+    }
+
+    #hero::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: radial-gradient(circle, rgba(0, 255, 65, 0.05) 1px, transparent 1px);
+      background-size: 15px 15px;
+      opacity: 0;
+      transition: opacity var(--transition);
+      z-index: -1;
+    }
+
+    body.dark #hero::before {
+      opacity: 1;
+    }
+
+    .hero-content {
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .hero-title {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1.5rem;
+      color: var(--muted-light);
+      margin-bottom: 2rem;
+    }
+
+    body.dark .hero-subtitle {
+      color: var(--primary-dark);
+    }
+
+    .typing-text {
+      display: inline;
+      position: relative;
+    }
+
+    .typing-text::after {
+      content: "|";
+      position: absolute;
+      right: -8px;
+      animation: blink 1s infinite;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .social-links a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: var(--primary);
+      color: white;
+      transition: background-color var(--transition), transform 0.2s;
+    }
+
+    body.dark .social-links a {
+      background-color: transparent;
+      border: 1px solid var(--primary-dark);
+      color: var(--primary-dark);
+    }
+
+    .social-links a:hover {
+      transform: translateY(-3px);
+    }
+
+    /* Canvas Matrix Effect */
+    #matrix-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      opacity: 0.15;
+      display: none;
+    }
+
+    body.dark #matrix-canvas {
+      display: block;
+    }
+
+    /* About Section */
+    .about-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .about-text {
+      padding: 2rem;
+      border-radius: 8px;
+      background-color: var(--card-bg-light);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: background-color var(--transition), box-shadow var(--transition);
+    }
+
+    body.dark .about-text {
+      background-color: var(--card-bg-dark);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+      border: 1px solid var(--terminal-border);
+    }
+
+    .about-info {
+      padding: 2rem;
+      border-radius: 8px;
+      background-color: var(--card-bg-light);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: background-color var(--transition), box-shadow var(--transition);
+    }
+
+    body.dark .about-info {
+      background-color: var(--card-bg-dark);
+      box-shadow: 0 4px 10px var(--terminal-shadow);
+      border: 1px solid var(--terminal-border);
+    }
+
+    .info-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+
+    .info-item i {
+      width: 40px;
+      height: 40px;
+      background-color: var(--primary);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 1rem;
+    }
+
+    body.dark .info-item i {
+      background-color: transparent;
+      color: var(--primary-dark);
+      border: 1px solid var(--primary-dark);
+    }
+
+    /* Typing Text Styles */
+    #typing-text {
+      font-family: 'Fira Code', monospace;
+      display: inline-block;
+      position: relative;
+    }
+
+    body.dark #typing-text {
+      color: var(--primary-dark);
+    }
+
+    body:not(.dark) #typing-text {
+      color: var(--muted-light);
+    }
+
+    /* Terminal Typography Styles */
+    .terminal-text {
+      font-family: 'Fira Code', monospace;
+      color: var(--primary-dark);
+      display: none;
+    }
+
+    body.dark .terminal-text {
+      display: block;
+    }
+
+    /* Regular Typography Styles */
+    .regular-text {
+      display: block;
+    }
+
+    body.dark .regular-text {
+      display: none;
+    }
+
+    /* Skills Section */
+    .skills-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .skill-card {
+      background-color: var(--card-bg-light);
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: background-color var(--transition), box-shadow var(--transition);
+    }
+
+    body.dark .skill-card {
+      background-color: var(--card-bg-dark);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+      border: 1px solid var(--terminal-border);
+    }
+
+    .skill-title {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .skill-title i {
+      font-size: 1.5rem;
+      color: var(--primary);
+    }
+
+    body.dark .skill-title i {
+      color: var(--primary-dark);
+    }
+
+    .skill-item {
+      margin-bottom: 1.5rem;
+    }
+
+    .skill-name {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.5rem;
+    }
+
+    .skill-bar {
+      height: 8px;
+      background-color: #e9ecef;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    body.dark .skill-bar {
+      background-color: #2a2a2a;
+    }
+
+    .skill-progress {
+      height: 100%;
+      background-color: var(--primary);
+      border-radius: 4px;
+      transition: width 1s ease-in-out;
+    }
+
+    body.dark .skill-progress {
+      background-color: var(--primary-dark);
+      box-shadow: 0 0 5px var(--primary-dark);
+    }
+
+    /* Experience and Education Section */
+    .timeline {
+      position: relative;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .timeline::after {
+      content: '';
+      position: absolute;
+      width: 2px;
+      background-color: var(--border-light);
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      margin-left: -1px;
+    }
+
+    body.dark .timeline::after {
+      background-color: var(--primary-dark);
+      box-shadow: 0 0 5px var(--primary-dark);
+    }
+
+    .timeline-item {
+      position: relative;
+      width: 50%;
+      padding: 0 40px 40px 0;
+    }
+
+    .timeline-item:nth-child(even) {
+      left: 50%;
+      padding: 0 0 40px 40px;
+    }
+
+    .timeline-item::after {
+      content: '';
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      right: 32px;
+      background-color: var(--primary);
+      border-radius: 50%;
+      top: 10px;
+      z-index: 1;
+    }
+
+    .timeline-item:nth-child(even)::after {
+      left: 32px;
+      right: auto;
+    }
+
+    body.dark .timeline-item::after {
+      background-color: var(--primary-dark);
+      box-shadow: 0 0 5px var(--primary-dark);
+    }
+
+    .timeline-content {
+      padding: 1.5rem;
+      background-color: var(--card-bg-light);
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: background-color var(--transition), box-shadow var(--transition);
+    }
+
+    body.dark .timeline-content {
+      background-color: var(--card-bg-dark);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+      border: 1px solid var(--terminal-border);
+    }
+
+    .timeline-date {
+      color: var(--muted-light);
+      font-weight: 500;
+    }
+
+    body.dark .timeline-date {
+      color: var(--primary-dark);
+    }
+
+    /* Projects Section */
+    .projects-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .project-card {
+      background-color: var(--card-bg-light);
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: box-shadow 0.3s, transform 0.3s, background-color var(--transition);
+    }
+
+    body.dark .project-card {
+      background-color: var(--card-bg-dark);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+      border: 1px solid var(--terminal-border);
+    }
+
+    .project-card:hover {
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+      transform: translateY(-5px);
+    }
+
+    .project-image {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .project-content {
+      padding: 1.5rem;
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .project-tag {
+      padding: 0.25rem 0.5rem;
+      background-color: var(--primary);
+      color: white;
+      border-radius: 4px;
+      font-size: 0.8rem;
+    }
+
+    body.dark .project-tag {
+      background-color: transparent;
+      border: 1px solid var(--primary-dark);
+      color: var(--primary-dark);
+    }
+
+    /* Contact Section */
+    .contact-form {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 2rem;
+      background-color: var(--card-bg-light);
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: background-color var(--transition), box-shadow var(--transition);
+    }
+
+    body.dark .contact-form {
+      background-color: var(--card-bg-dark);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+      border: 1px solid var(--terminal-border);
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid #ced4da;
+      border-radius: 4px;
+      background-color: #fff;
+      color: #212529;
+      transition: border-color 0.15s, box-shadow 0.15s;
+    }
+
+    .form-control:focus {
+      border-color: var(--primary);
+      outline: 0;
+      box-shadow: 0 0 0 0.2rem rgba(152, 80, 99, 0.25);
+    }
+
+    body.dark .form-control {
+      background-color: #2a2a2a;
+      border-color: #444;
+      color: var(--text-dark);
+    }
+
+    body.dark .form-control:focus {
+      border-color: var(--primary-dark);
+      box-shadow: 0 0 0 0.2rem rgba(0, 255, 65, 0.25);
+    }
+
+    textarea.form-control {
+      min-height: 150px;
+      resize: vertical;
+    }
+
+    /* Footer */
+    footer {
+      background-color: var(--section-bg-light);
+      padding: 2rem 0;
+      text-align: center;
+      transition: background-color var(--transition);
+    }
+
+    body.dark footer {
+      background-color: var(--section-bg-dark);
+      border-top: 1px solid var(--terminal-border);
+    }
+
+    .footer-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    /* Media Queries */
+    @media (max-width: 991px) {
+      .about-content {
+        grid-template-columns: 1fr;
+      }
+
+      .timeline::after {
+        left: 40px;
+      }
+
+      .timeline-item {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 0;
+      }
+
+      .timeline-item:nth-child(even) {
+        left: 0;
+        padding-left: 70px;
+        padding-right: 0;
+      }
+
+      .timeline-item::after,
+      .timeline-item:nth-child(even)::after {
+        left: 32px;
+        right: auto;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+
+      .nav-links.active {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background-color: var(--bg-light);
+        padding: 1rem;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      body.dark .nav-links.active {
+        background-color: var(--bg-dark);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+      }
+
+      .mobile-menu-btn {
+        display: block;
+      }
+
+      .hero-title {
+        font-size: 2.5rem;
+      }
+
+      .hero-subtitle {
+        font-size: 1.2rem;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .timeline-content {
+        padding: 1rem;
+      }
+
+      .hero-title {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <canvas id="matrix-canvas"></canvas>
+  
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">Haleema Saadia</div>
+        <ul class="nav-links">
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li>  </li>
+        </ul>
+        <div class="theme-switch-wrapper">
+          <!-- Shield icon for secure mode -->
+          <i class="fas fa-shield-alt secure-icon"></i>
+          
+          <label class="theme-slider">
+            <input type="checkbox" id="theme-toggle">
+            <span class="slider"></span>
+          </label>
+          
+          <!-- Hacker icon for hack mode -->
+          <i class="fas fa-user-secret hack-icon"></i>
+        </div>
+        <button class="mobile-menu-btn">
+          <i class="fas fa-bars"></i>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <section id="hero">
+    <div class="container">
+      <div class="hero-content">
+        <div class="profile-image">
+          <img src="haleema.jpg" alt="Haleema Saadia" class="rounded-image">
+        </div>
+        <h1 class="hero-title">Haleema Saadia</h1>
+        <h2 class="hero-subtitle">
+          <span id="typing-text">L1 SOC Analyst</span>
+        </h2>
+<p>Penetration Testing | L1 SOC Analyst | Vulnerability Assessor | Threat Detection and Response</p>
+        <div class="social-links">
+          <a href="https://www.linkedin.com/in/haleema-saadia-b56b99236" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://github.com/HaleemaSaadia12" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="https://medium.com/@haleemakk12" target="_blank"><i class="fab fa-medium-m"></i></a>
+          <a href="https://tryhackme.com/r/manage-account/account-details" target="_blank"><i class="fas fa-flag"></i></a>
+        </div>
+<br>
+        <a href="#contact" class="btn">Get In Touch</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container">
+      <div class="section-title">
+        <h2 class="title-text light-title">About Me</h2>
+        <h2 class="title-text dark-title">./about.sh</h2>
+      </div>
+      <div class="about-content">
+        <div class="about-text">
+          <h3 class="regular-text">Who am I?</h3>
+          <h3 class="terminal-text">$ whoami</h3>
+          <p>A proficient cybersecurity professional with expertise in Security Operations Center (SOC) monitoring, threat intelligence, and penetration testing. Experienced in log analysis, SIEM tools (Elastic Security, Wazuh, QRadar, Kaspersky, Suricata), and real-time incident response to detect and mitigate cyber threats. Skilled in vulnerability assessment and penetration testing, leveraging deep research capabilities to identify and exploit weaknesses to strengthen cybersecurity defenses.</p>
+          <p>Adept at investigating security alerts, correlating logs, and responding to incidents within a SOC environment. Committed to continuous learning through CTF competitions, hackathons, and hands-on experience with threat-hunting techniques.</p>
+        </div>
+        <div class="about-info">
+          <div class="info-item">
+           
+          </div>
+          <div class="info-item">
+            <i class="fas fa-envelope"></i>
+            <div>
+              <h4>Email</h4>
+              <p>haleemakk12@gmail.com</p>
+            </div>
+          </div>
+          <div class="info-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <div>
+              <h4>Location</h4>
+              <p>Islamabad, Pakistan</p>
+            </div>
+          </div>
+          <div class="info-item">
+            <i class="fas fa-graduation-cap"></i>
+            <div>
+              <h4>Education</h4>
+              <p>B.S. in Cyber Security, COMSATS University Islamabad (2021-2025)</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="container">
+      <div class="section-title">
+        <h2 class="title-text light-title">My Skills</h2>
+        <h2 class="title-text dark-title">./skills.sh</h2>
+      </div>
+      <div class="skills-container">
+        <div class="skill-card">
+          <div class="skill-title">
+            <i class="fas fa-shield-alt"></i>
+            <h3>Security Operations</h3>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name">
+              <span>SOC Operations</span>
+              <span>90%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width: 93%;"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name">
+              <span>Incident Response</span>
+              <span>93%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width: 93%;"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name">
+              <span>Log Analysis</span>
+              <span>94%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width: 94%;"></div>
+            </div>
+          </div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-title">
+            <i class="fas fa-bug"></i>
+            <h3>Penetration Testing</h3>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name">
+              <span>Web App Testing</span>
+              <span>94%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width: 94%;"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name">
+              <span>Network Testing</span>
+              <span>95%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width: 95%;"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name">
+              <span>Vulnerability Assessment</span>
+              <span>90%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width: 90%;"></div>
+            </div>
+          </div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-title">
+            <i class="fas fa-chart-line"></i>
+            <h3>SIEM Tools</h3>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name">
+              <span>Elastic Security</span>
+              <span>85%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width: 85%;"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name">
+              <span>Wazuh</span>
+              <span>80%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width: 80%;"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name">
+              <span>Suricata/Zeek</span>
+              <span>75%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width: 75%;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="container">
+      <div class="section-title">
+        <h2 class="title-text light-title">Work Experience</h2>
+        <h2 class="title-text dark-title">./experience.sh</h2>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <span class="timeline-date">July 2024 - August 2024</span>
+            <h3>CyberSecurity Intern</h3>
+            <h4>ISPR - GHQ Rawalpindi</h4>
+            <ul>
+              <li>Assisted in SOC operations, monitoring security alerts, and analyzing logs</li>
+              <li>Actively monitored security systems, analyzed potential threats, and assisted with incident response in a SOC environment</li>
+              <li>Contributed to developing and refining security protocols to enhance organizational cybersecurity</li>
+              <li>Collaborated with experienced professionals, further deepening knowledge in threat detection, log analysis, and security event management</li>
+            </ul>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <span class="timeline-date">July 2023 - September 2023</span>
+            <h3>Honeypot Researcher</h3>
+            <h4>Cytomate - Doha, Qatar</h4>
+            <ul>
+              <li>Designed and deployed various honeypots, including cannypots, to detect and analyze cyber threats</li>
+              <li>Researched the implementation of reinforcement learning and AI in honeypots to enhance threat detection capabilities</li>
+              <li>Developed custom configurations to attract attackers and collect valuable threat intelligence data</li>
+              <li>Performed threat detection using honeypots and log analysis</li>
+            </ul>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <span class="timeline-date">October 2022 - Present</span>
+            <h3>CTF Player</h3>
+            <h4>CTFs - Online</h4>
+            <ul>
+              <li>Came 2nd in Hackathon held by CTS*Cui from all over Pakistan in Comsats University Islamabad</li>
+              <li>Experience in Blue Teaming tasks such as log analysis, threat hunting, and security monitoring</li>
+              <li>Successfully participated in National Cyber Security Hackathon presented by ignite and came in the Top 20's overall in Red Teaming and Blue Teaming</li>
+              <li>Top 9% in the CTF Platform, TryHackMe</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="education">
+    <div class="container">
+      <div class="section-title">
+        <h2 class="title-text light-title">Education</h2>
+        <h2 class="title-text dark-title">./education.sh</h2>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <span class="timeline-date">2021 - 2025</span>
+            <h3>Bachelor of Science in Cyber Security</h3>
+            <h4>COMSATS University Islamabad</h4>
+            <p>4 year degree program</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <span class="timeline-date">Pre Medical</span>
+            <h3>FSc</h3>
+            <h4>APS Humayun Rd Rawalpindi</h4>
+            <p>Pre Medical - 84%</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <span class="timeline-date">Matriculation</span>
+            <h3>Matriculation</h3>
+            <h4>APS Mangla Cantt</h4>
+            <p>Pre Medical - 89%</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="container">
+      <div class="section-title">
+        <h2 class="title-text light-title">Projects</h2>
+        <h2 class="title-text dark-title">./projects.sh</h2>
+      </div>
+      <div class="projects-container">
+        <div class="project-card">
+          <div class="project-content">
+            <h3>Next-Gen Attack Surface Management (ASM)</h3>
+            <div class="project-tags">
+              <span class="project-tag">CyberSecurity</span>
+              <span class="project-tag">Web Socket</span>
+              <span class="project-tag">Ansible</span>
+            </div>
+            <p>Developed a comprehensive cybersecurity solution to identify, assess, and manage vulnerabilities in digital assets. Key features include real-time asset scanning and monitoring, application enumeration, post-exploitation capabilities, and command execution via a centralized control server.</p>
+            <p>Implemented package installation and configuration management using web sockets and Ansible. Enhanced reporting and alerting modules to provide actionable insights for proactive threat management.</p>
+            <p>Secured 2nd position on our Expo all over Cybersecurity for my project.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <section id="contact">
+   <div class="contact-form">
+          <!-- FormSubmit.co Integration -->
+          <form action="https://formsubmit.co/haleemakk12@gmail.com" method="POST">
+            <!-- FormSubmit configuration -->
+            <input type="hidden" name="_subject" value="New Contact Message from Portfolio">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_next" id="form-next-url" value="">
+            
+            <div class="form-group">
+              <label for="name" class="form-label">Name</label>
+              <input type="text" id="name" name="name" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" id="email" name="email" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label for="subject" class="form-label">Subject</label>
+              <input type="text" id="subject" name="subject" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label for="message" class="form-label">Message</label>
+              <textarea id="message" name="message" class="form-control" required></textarea>
+            </div>
+            <button type="submit" class="btn">Send Message</button>
+          </form>
+        </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+         <p>© 2025 Haleema Saadia. All Rights Reserved. Website Created By <a href="https://chabdulmoiz.github.io/profile/">Chaudhary Abdul Moiz</a>.
+</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const themeToggle = document.getElementById('theme-toggle');
+      const body = document.body;
+      const menuBtn = document.querySelector('.mobile-menu-btn');
+      const navLinks = document.querySelector('.nav-links');
+      
+      // Check for saved theme preference and apply it
+      if (localStorage.getItem('dark-mode') === 'true') {
+        body.classList.add('dark');
+        themeToggle.checked = true;
+        setupMatrix();
+      }
+      
+      // Toggle menu on mobile
+      menuBtn.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+      });
+      
+      // Theme toggle functionality
+      themeToggle.addEventListener('change', function() {
+        if (this.checked) {
+          body.classList.add('dark');
+          localStorage.setItem('dark-mode', 'true');
+          setupMatrix();
+        } else {
+          body.classList.remove('dark');
+          localStorage.setItem('dark-mode', 'false');
+        }
+      });
+      
+      // Improved advanced typing animation with backspace effect
+      const typingElement = document.getElementById('typing-text');
+      const titles = [
+        "Penetration Testing",
+        "L1 SOC Analyst",
+        "Vulnerability Assessor",
+        "Threat Detection and Response"
+      ];
+      
+      let titleIndex = 0;
+      let charIndex = 0;
+      let isDeleting = false;
+      
+      function typeEffect() {
+        const currentTitle = titles[titleIndex];
+        
+        // If deleting
+        if (isDeleting) {
+          // Remove a character
+          typingElement.textContent = currentTitle.substring(0, charIndex - 1);
+          charIndex--;
+          
+          // When completely deleted
+          if (charIndex === 0) {
+            isDeleting = false;
+            titleIndex = (titleIndex + 1) % titles.length;
+            setTimeout(typeEffect, 500); // Pause before typing next word
+          } else {
+            setTimeout(typeEffect, 50); // Fast backspace speed
+          }
+        } 
+        // If typing
+        else {
+          // Add a character
+          typingElement.textContent = currentTitle.substring(0, charIndex + 1);
+          charIndex++;
+          
+          // When done typing
+          if (charIndex === currentTitle.length) {
+            isDeleting = true;
+            setTimeout(typeEffect, 1000); // Pause at end of word
+          } else {
+            setTimeout(typeEffect, 150); // Typing speed
+          }
+        }
+      }
+      
+      // Add the cursor blink effect to typing element
+      function setCursorBlink() {
+        const cursor = document.createElement('span');
+        cursor.textContent = '|';
+        cursor.style.marginLeft = '2px';
+        cursor.style.animation = 'blink 1s infinite';
+        cursor.classList.add('cursor');
+        typingElement.appendChild(cursor);
+      }
+      
+      // Start the typing animation with a small delay
+      setTimeout(() => {
+        setCursorBlink();
+        typeEffect();
+      }, 800);
+      
+      // Setup matrix canvas effect
+      function setupMatrix() {
+        const canvas = document.getElementById('matrix-canvas');
+        const ctx = canvas.getContext('2d');
+        
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        
+        const fontSize = 14;
+        const columns = Math.floor(canvas.width / fontSize);
+        const drops = [];
+        
+        for (let i = 0; i < columns; i++) {
+          drops[i] = Math.floor(Math.random() * canvas.height / fontSize);
+        }
+        
+        const chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789$+-*/=%"\'#&_(),.;:?!\\|{}<>[]^~';
+        
+        function drawMatrix() {
+          ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+          ctx.fillRect(0, 0, canvas.width, canvas.height);
+          
+          ctx.fillStyle = '#00ff41';
+          ctx.font = `${fontSize}px Fira Code`;
+          
+          for (let i = 0; i < drops.length; i++) {
+            const text = chars[Math.floor(Math.random() * chars.length)];
+            const x = i * fontSize;
+            const y = drops[i] * fontSize;
+            
+            ctx.fillText(text, x, y);
+            
+            if (y > canvas.height && Math.random() > 0.975) {
+              drops[i] = 0;
+            }
+            
+            drops[i]++;
+          }
+          
+          requestAnimationFrame(drawMatrix);
+        }
+        
+        drawMatrix();
+      }
+      
+      // If dark mode is active on load, initialize matrix
+      if (body.classList.contains('dark')) {
+        setupMatrix();
+      }
+      
+      // Handle window resize
+      window.addEventListener('resize', () => {
+        if (body.classList.contains('dark')) {
+          setupMatrix();
+        }
+      });
+      
+      // Animate skill bars on scroll
+      const skillBars = document.querySelectorAll('.skill-progress');
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const width = entry.target.getAttribute('style').split(':')[1].trim();
+            entry.target.style.width = width;
+          }
+        });
+      }, { threshold: 0.1 });
+      
+      skillBars.forEach(bar => {
+        const width = bar.style.width;
+        
+        observer.observe(bar);
+      });
+    });
+  </script>
+
+</body></html>
